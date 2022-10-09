@@ -1,0 +1,76 @@
+itemid,Title,category,item_rating,image,discription,price
+2,"Fresho Green Peas, 500 gm ",FruitVegetables,5,10000283_11-fresho-green-peas.jpg,"500 gm - Rs 10.00
+250 gm - Rs 6.00
+1 kg - Rs 21.00",10
+3,"Fresho Banana - Robusta, 1 kg ",FruitVegetables,3,10000025_24-fresho-banana-robusta.jpg,"1 kg - Rs 23.00
+500 gm - Rs 12.00",23
+4,"Fresho Ladies Finger, 1 kg ",FruitVegetables,2,10000142_16-fresho-ladies-finger.jpg,"1 kg - Rs 59.00
+250 gm - Rs 15.00
+500 gm - Rs 30.00",59
+5,"Fresho Tomato - Hybrid, 1 kg ",FruitVegetables,5,10000200_17-fresho-tomato-hybrid.jpg,"1 kg - Rs 18.00
+500 gm - Rs 10.00",18
+6,"Fresho Pomegranate, 1 kg ",FruitVegetables,5,20000708_14-fresho-pomegranate.jpg,"1 kg - Rs 69.00
+500 gm - Rs 40.00",69
+7,Saffola Gold - Pro Healthy Lifestyle Edi,FoodgrainsoilMasala,5,147493_11-saffola-gold-pro-healthy-lifestyle-edible-oil.jpg,"5 lt Jar - Rs 649.00
+2x1 L ( Multipack ) - Rs 278.00
+2x2 L ( Multipack ) - Rs 611.00
+3x1 L ( Multipack ) - Rs 417.00
+1 lt Pouch - Rs 139.00
+2 lt Jar - Rs 274.95",649
+8,"bb Royal Whole Wheat Atta, 5 kg ",FoodgrainsoilMasala,5,40099240_8-bb-royal-whole-wheat-atta.jpg,"5 kg - Rs 149.00
+1 kg - Rs 44.00
+10 kg - Rs 295.00",149
+9,"Daawat Basmati Rice - Rozana Super 90, 5",FoodgrainsoilMasala,5,40075197_2-daawat-basmati-rice-rozana-super-90.jpg,"5 kg - Rs 349.00
+1 kg - Rs 69.00",349
+10,"bb Royal Besan - Flour, 500 gm ",FoodgrainsoilMasala,5,10000475_7-bb-royal-besan-flour.jpg,"500 gm - Rs 42.00
+1 kg Pouch - Rs 89.00",42
+11,"Madhur Sugar - Refined, 5 kg Pouch",FoodgrainsoilMasala,2,214431_6-madhur-sugar-refined.jpg,"5 kg Pouch - Rs 221.50
+1 kg Pouch - Rs 46.50",221
+12,"Parle Rusk - Real Elaichi, 200 gm ",BakerycakesDairy,4,30008655_8-parle-rusk-real-elaichi.jpg,good test,28
+13,"Amul Lassi - Rose Flavor, 200 ml Carton",BakerycakesDairy,3,40013013_1-amul-lassi-rose-flavor.jpg,"200 ml Carton - Rs 14.10
+1 lt Carton - Rs 61.10 (Out of Stock)",14
+14,"Bauli Spyroll, 37 gm ",BakerycakesDairy,5,40158399_1-bauli-spyroll.jpg,,20
+15,"Metro Bread - White Sliced, Metro Kattu,",BakerycakesDairy,5,40076722_2-metro-bread-white-sliced-metro-kattu.jpg,,18
+16,"Kalory Bun, 200 gm ",BakerycakesDairy,5,40096153_1-kalory-bun.jpg,,20
+17,"Nescafe Latte, 25 gm ",Beverage,5,40090542_4-nescafe-latte.jpg,Standard Delivery: Tomorrow Morning,23.5
+18,"Bisleri Mineral Water, 24x500 ml Multi P",Beverage,5,1200137_1-bisleri-mineral-water.jpg,"24x500 ml Multi Pack - Rs 218.88
+1 L Bottle - Rs 18.80
+2 L Bottle - Rs 28.20
+500 ml Bottle - Rs 9.40",218
+19,"Bournvita Pro-Health Chocolate Drink, 2x",Beverage,5,1203451_1-bournvita-pro-health-chocolate-drink.jpg,"2x1 kg ( Multipack ) - Rs 689.32
+1 kg Jar - Rs 355.32
+500 gm Jar - Rs 202.10",689
+21,"Kinley Club Soda, 750 ml ",Beverage,5,265680_5-kinley-club-soda.jpg,,15
+22,"Nescafe Coffee - Classic, 2x25 gm ( Mult",Beverage,5,1204509_1-nescafe-coffee-classic.jpg,"2x25 gm ( Multipack ) - Rs 127.66
+100 gm Glass Jar - Rs 245.00
+2x100 gm ( Multipack ) - Rs 498.68
+25 gm Glass Jar - Rs 65.00",127
+23,"Parle Hide & Seek Chocolate, 6x33 gm Mul",SnacksBrandedFoods,5,1200153_3-parle-hide-seek-chocolate.jpg,"6x33 gm Multi Pack - Rs 53.58
+2x120 gm Multi Pack - Rs 55.28
+33 gm Pouch - Rs 9.40
+120 gm Pouch - Rs 26.00",53
+24,"Parle Biscuits - Monaco Salted Snack, 3x",SnacksBrandedFoods,5,1200146_3-parle-biscuits-monaco-salted-snack.jpg,"3x200 gm Multi Pack - Rs 80.37
+6x75.4 gm Multi Pack - Rs 53.58
+200 gm Pouch - Rs 27.00
+75.4 gm Pouch - Rs 9.40",80
+25,"Cadbury Oreo Creme Biscuit - Vanilla, 51",SnacksBrandedFoods,5,100423120_22-cadbury-oreo-creme-biscuit-vanilla.jpg,"51.5 gm - Rs 9.40
+3x120 gm ( Multipack ) - Rs 84.39
+120 gm - Rs 28.13",9
+26,"Quaker Oats, 400 gm Pouch",SnacksBrandedFoods,5,266122_6-quaker-oats.jpg,"400 gm Pouch - Rs 69.56
+1 kg Pouch - Rs 178.00",69
+27,"Kelloggs Chocos, 1.2 kg ",SnacksBrandedFoods,5,30008601_8-kelloggs-chocos.jpg,"1.2 kg - Rs 405.00
+375 gm - Rs 150.40
+700 gm - Rs 263.20
+250 gm - Rs 108.10
+125 gm - Rs 51.70",405
+29,"Rin Detergent Bar, 250 gm Pack of 4",Cleaninghousehold,5,281497_4-rin-detergent-bar.jpg,,60
+30,"Vim Dishwash Bar, 300 gm ",Cleaninghousehold,5,306160_20-vim-dishwash-bar.jpg,,70
+31,"Godrej Ezee Detergent Liquid, 500 gm ",Cleaninghousehold,5,40006995_4-godrej-ezee-detergent-liquid.jpg,,84
+32,Lizol Disinfectant Surface Cleaner ,Cleaninghousehold,5,1202437_4-lizol-disinfectant-surface-cleaner-citrus-2-l-floor-cleaner-floral-2-l.jpg,,582
+34,"Himalaya Soap - Neem & Turmeric, 2x75 g ",Cleaninghousehold,3,soap.jpg,"Himalaya Protecting Neem and Turmeric soap improved with oils of Neem that protects skin due to its antibacterial activities; Lemon that energizes and keeps skin due to its antiseptic activities and Turmeric nourishes, recovers complexion and its antiseptic activities protect the skin.
+
+",58
+35,soap,Cleaninghousehold,3,1202789_1-himalaya-bathing-soap-cucumber-coconut.jpg,abc,50
+36,"Fresho Banana - Robusta, 500 g",FruitVegetables,5,10000025_24-fresho-banana-robusta.jpg,,22
+37,soap,Cleaninghousehold,4,3.jpg,Its just a Soap,22
+38,Soap,FruitVegetables,3,2.jpg,Its Just a Soap,200

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Home Page</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="static/img/favicon.png" rel="icon">
+  <link href="static/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Amatic+SC:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="static/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="static/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="static/vendor/aos/aos.css" rel="stylesheet">
+  <link href="static/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="static/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="static/css/main.css" rel="stylesheet">
+  <link rel="stylesheet" href="static/css/style.css" type="text/css">
+<style>
+  a:hover{
+    color: limegreen;
+  }
+</style>
+
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center me-auto me-lg-0">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="static/img/logo.png" alt=""> -->
+        <h1>GroMart<span></span></h1>
+      </a>
+
+      
+          
+          
+      <a href="/home">Home</a>
+
+      <a href="/cart">Offers</a>
+      <a href="/index">Logout</a>
+      <a class="btn-book-a-table" href="#book-a-table">Grostars : </a>
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      
+      
+    </div>
+  </header>
+
+  <body>
+    <section id="why-us" class="why-us section-bg" style="padding-top: 20px;">
+      <div class="hero__search" style="margin: auto; width: 50%;" >
+            <form action="/result" method="POST" >
+              <label class="label" for="content">What would you like to have ?</label>
+              <select style="color:rgb(90, 152, 90);" class="drop" id="content" name="content">
+                <option value="Low fat products">Low fat products</option>
+                <option value="Low sugar products">Low sugar products</option>
+                <option value="Protein rich products">Protein rich products</option>
+                <option value="Low salt products">Low salt products</option>
+                <option value="Energy rich products">Energy rich products</option>
+                <option value="Low cabohydrates products">Low cabohydrates products</option>
+              </select>
+              <button type="submit">Submit</button>
+            </div>
+              <centre>
+                {% for i in range(content|length) %}
+                <div class="row-3" >
+                <div class="col-md-3" style="margin-top:50px; color: black;margin: auto; width: 50%;" >
+                    <div class="card">
+                        <div class="card-body">
+                            
+                            <p class="text-black">{{ content[i] }}</p>
+                            
+                           
+                            
+                        </div>
+                    </div>
+                </div>
+              </div>
+            {% endfor %}
+              </centre>
+              
+            </form>
+        </div>
+        </div>
+        </section>
+        </body>
+        
+        <!--section class="product spad">
+          <div class="container">
+              <div class="row">
+                  <div class="col-lg-3 col-md-5">
+                      <div class="sidebar">
+                          <div class="sidebar__item">
+        
+          <h4>Price</h4>
+          <div class="price-range-wrap">
+              <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
+                  data-min="10" data-max="540">
+                  <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
+                  <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+                  <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
+              </div>
+              <div class="range-slider">
+                  <div class="price-input">
+                      <input type="text" id="minamount">
+                      <input type="text" id="maxamount">
+                  </div>
+              </div>
+          </div>
+      </div>
+  </body>
