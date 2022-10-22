@@ -75,7 +75,7 @@
           </div>
           <h7>Basmati Rice(5Kg)</h7>
           <p>Rs.700</p>
-          <button type="button" class="add_to_cart" onclick="show();">Add to Cart</button>
+          <button type="button" class="add_to_cart" onclick="show('Basmati Rice(5Kg)', 'static/img/rice.jpg', 700);">Add to Cart</button>
           <i class="bi bi-cart4"></i>
       </div>
 
@@ -213,8 +213,8 @@
           <i class="bi bi-cart4"></i>
       </div>
 <script>
-                        function show(){
-window.location.href = '/cartst';
+                        function show(name, image, price){
+window.location.href = `/checkout?item=${name}&image=${image}&price=${price}`;
 }
 </script>
 

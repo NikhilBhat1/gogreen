@@ -52,10 +52,12 @@ class CartModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     email = db.Column(db.String())
     item = db.Column(db.String())
+    image = db.Column(db.String())
     
-    def __init__(self, email, item):
+    def __init__(self, email, item, image):
         self.email = email
         self.item=item
+        self.image = image
 
 
 @app.route('/', methods=['GET'])
@@ -125,6 +127,7 @@ def product():
 @app.route('/cart',methods=['GET'])
 def cart():
     return render_template('cart.html')
+
 
 @app.route('/health', methods=['GET', 'POST'])
 def health():
@@ -227,13 +230,18 @@ def grows():
     return render_template('gohtml.html')
 
 
-@app.route('/cartst', methods=['GET'])
+@app.route('/checkout', methods=['GET'])
 def carts():
-    global uname
-    new_user = CartModel(email=uname, item="potato")
-    db.session.add(new_user)
-    db.session.commit()
-    return render_template("cart.html")
+    item = request.args.get('item')
+    image = request.args.get('image')
+    if ( item != None ): 
+        new_user = CartModel(email=uname, item=item, image=image)
+        db.session.add(new_user)
+        db.session.commit()
+
+    cursor.execute('SELECT * from carts WHERE email= %s', [uname])
+    result=cursor.fetchall()
+    return render_template("cart.html", length=len(result), result = result)
  
     
 if __name__ == "__main__":
