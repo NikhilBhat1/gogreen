@@ -54,10 +54,14 @@ class CartModel(db.Model):
     item = db.Column(db.String())
     image = db.Column(db.String())
     
+    
+    
     def __init__(self, email, item, image):
         self.email = email
         self.item=item
         self.image = image
+        
+        
 
 
 @app.route('/', methods=['GET'])
@@ -122,11 +126,16 @@ def signup():
        
 @app.route('/product', methods=['GET'])
 def product():
-    return  render_template('product.html')
+    cursor.execute('SELECT * from test')
+    result=cursor.fetchall()
+    return render_template("product.html", length1=int(len(result)/2),length2=len(result),result = result)
+    
 
 @app.route('/cart',methods=['GET'])
 def cart():
-    return render_template('cart.html')
+    cursor.execute('SELECT * from carts where email=%s',[uname])
+    result=cursor.fetchall()
+    return render_template('cart.html',result=result)
 
 
 @app.route('/health', methods=['GET', 'POST'])
@@ -234,10 +243,35 @@ def grows():
 def carts():
     item = request.args.get('item')
     image = request.args.get('image')
+    proid=request.args.get('proid')
+    print(proid)
+   
+    cursor.execute('SELECT item from carts WHERE email=%s',[uname])
+    result=cursor.fetchall()
+   
+    
+    
+    
     if ( item != None ): 
-        new_user = CartModel(email=uname, item=item, image=image)
-        db.session.add(new_user)
-        db.session.commit()
+        global count2
+        count2=0
+        print(len(result))
+       
+        for i in range(0,len(result)):
+            print(result[i][0])
+            print(proid)
+            if item==result[i][0]:
+               
+                count2=1
+                break        
+        if count2==1:
+            print("exists")
+        else:
+        
+            
+            new_user = CartModel(email=uname, item=item, image=image)
+            db.session.add(new_user)
+            db.session.commit()
 
     cursor.execute('SELECT * from carts WHERE email= %s', [uname])
     result=cursor.fetchall()

@@ -65,9 +65,10 @@
       
     </div>
   </header><!-- End Header -->
+ 
   <div style="padding-top:100px; padding-left: 10px;">
     <div class="row">
-      <div class="col-lg-2 text-center"  >
+      <!-- <div class="col-lg-2 text-center"  >
           <div class="card border-0 bg-light mb-2">
               <div class="card-body">
                   <img src="static/img/rice.jpg" class="img-fluids" alt="">
@@ -77,23 +78,27 @@
           <p>Rs.700</p>
           <button type="button" class="add_to_cart" onclick="show('Basmati Rice(5Kg)', 'static/img/rice.jpg', 700);">Add to Cart</button>
           <i class="bi bi-cart4"></i>
-      </div>
+      </div> -->
 
-      <br>
+      {%for i in range(0, length1) %}
+      
       <div class="col-lg-2 text-center">
           <div class="card border-0 bg-light mb-2">
               <div class="card-body">
-                  <img src="static/img/nutella.jpg" class="img-fluids" alt="" >
+                  <img src="{{result[i][2]}}" class="img-fluids" alt="" >
               </div>
           </div>
-          <h7>Nutella(100gm)</h7>
-          <p>Rs.190</p>
-          <button type="button" onclick="show();" class="add_to_cart">Add to Cart</button>
+          <h7>{{result[i][1]}}</h7>
+          <p>{{result[i][4]}}</p>
+          
+          <button type="button" onclick="show('{{result[i][1]}}','{{result[i][2]}}');" class="add_to_cart">Add to Cart</button>
           <i class="bi bi-cart4"></i>
           
       </div>
       
-      <div class="col-lg-2 text-center">
+      {%endfor%}
+      
+      <!-- <!-- <div class="col-lg-2 text-center">
           <div class="card border-0 bg-light mb-2">
               <div class="card-body">
                   <img src="static/img/oats.jpg" class="img-fluids" alt="" >
@@ -101,7 +106,7 @@
           </div>
           <h7>Quaker Oats(400gm)</h7>
           <p>Rs.100</p>
-          <button type="button" onclick="show();"  class="add_to_cart">Add to Cart</button>
+          <button type="button" onclick="show('Quaker Oats(400gm)','static/img/oats.jpg');"  class="add_to_cart">Add to Cart</button>
           <i class="bi bi-cart4"></i>
       </div>
   
@@ -114,7 +119,7 @@
           </div>
           <h7>Dark Fantasy(300gm)</h7>
           <p>Rs.300</p>
-          <button type="button" onclick="show();"  class="add_to_cart">Add to Cart</button>
+          <button type="button" onclick="show('Dark Fantasy(300gm)','static/img/darkfantasy.jpg');"  class="add_to_cart">Add to Cart</button>
           <i class="bi bi-cart4"></i>
       </div>
   
@@ -126,7 +131,7 @@
           </div>
           <h7>Wheat Powder(10kg)</h7>
           <p>Rs.540</p>
-          <button type="button" onclick="show();"  class="add_to_cart">Add to Cart</button>
+          <button type="button" onclick="show('Wheat Powder(10kg)','static/img/wheat.jpg');"  class="add_to_cart">Add to Cart</button>
           <i class="bi bi-cart4"></i>
       </div>
   
@@ -138,23 +143,25 @@
           </div>
           <h7>Cheese(200gm)</h7>
           <p>Rs.114</p>
-          <button type="button" onclick="show();"  class="add_to_cart">Add to Cart</button>
+          <button type="button" onclick="show('Cheese(200gm)','static/img/cheese.jpg');"  class="add_to_cart">Add to Cart</button>
           <i class="bi bi-cart4"></i>
       </div>
-  <br>
+  <br> -->
+  {%for i in range(length1, length2) %}
       <div class="col-lg-2 text-center">
           <div class="card border-0 bg-light mb-2">
               <div class="card-body">
-                  <img src="static/img/horlcks.jpg" class="img-fluids" alt="" height="115px" >
+                  <img src="{{result[i][2]}}" class="img-fluids" alt="" height="115px" >
               </div>
           </div>
-          <h7>Horlicks(500gm)</h7>
-          <p>Rs.190</p>
-          <button type="button" onclick="show();"  class="add_to_cart">Add to Cart</button>
+          <h7>{{result[i][1]}}</h7>
+          <p>{{result[i][3]}}</p>
+          <button type="button" onclick="show('Horlicks(500gm)','static/img/horlcks.jpg');"  class="add_to_cart">Add to Cart</button>
           <i class="bi bi-cart4"></i>
       </div>
+      {%endfor%}
   
-      <div class="col-lg-2 text-center">
+      <!-- <div class="col-lg-2 text-center">
           <div class="card border-0 bg-light mb-2">
               <div class="card-body">
               <img src="static/img/milkpow.jpg" class="img-fluids" alt="" height="115px" >
@@ -162,7 +169,7 @@
           </div>
           <h7>Everyday Milk Powder</h7>
           <p>Rs.600</p>
-          <button type="button" onclick="show();"  class="add_to_cart">Add to Cart</button>
+          <button type="button" onclick="show('Everyday Milk Powder','static/img/milkpow.jpg');"  class="add_to_cart">Add to Cart</button>
           <i class="bi bi-cart4"></i>
       </div>
   
@@ -174,7 +181,7 @@
           </div>
           <h7>Tomato Ketchup(1kg)</h7>
           <p>Rs.145</p>
-          <button type="button" onclick="show();"  class="add_to_cart">Add to Cart</button>
+          <button type="button" onclick="show('Tomato Ketchup(1kg)','static/img/ketchup.jpg');"  class="add_to_cart">Add to Cart</button>
           <i class="bi bi-cart4"></i>
       </div>
   
@@ -186,7 +193,7 @@
           </div>
           <h7>Fresh Potato(1kg)</h7>
           <p>Rs.40</p>
-          <button type="button" onclick="show();"  class="add_to_cart">Add to Cart</button>
+          <button type="button" onclick="show('Fresh Potato(1kg)','static/img/potato.jpg');"  class="add_to_cart">Add to Cart</button>
           <i class="bi bi-cart4"></i>
       </div>
       <div class="col-lg-2 text-center">
@@ -197,24 +204,25 @@
           </div>
           <h7>Wheat Bread</h7>
           <p>Rs.50</p>
-          <button type="button" onclick="show();"  class="add_to_cart">Add to Cart</button>
+          <button type="button" onclick="show('Wheat Bread','static/img/bread.jpg');"  class="add_to_cart">Add to Cart</button>
           <i class="bi bi-cart4"></i>
-      </div>
-  
-      <div class="col-lg-2 text-center">
+      </div> -->
+   
+      <!-- <div class="col-lg-2 text-center">
           <div class="card border-0 bg-light mb-2">
               <div class="card-body">
                   <img src="static/img/sambar.jpg" class="img-fluids" alt="" height="115px" >
               </div>
           </div>
           <h7>Sambar Kit</h7>
-          <p>Rs.70</p>
-          <button type="button" onclick="show();"  class="add_to_cart">Add to Cart</button>
-          <i class="bi bi-cart4"></i>
-      </div>
+          <p>Rs.70</p> -->
+          <!-- <button type="button" onclick="show('Sambar Kit','static/img/sambar.jpg');"  class="add_to_cart">Add to Cart</button>
+          <i class="bi bi-cart4"></i> -->
+      <!-- </div> -->
+      
 <script>
-                        function show(name, image, price){
-window.location.href = `/checkout?item=${name}&image=${image}&price=${price}`;
+                        function show(name, image){
+window.location.href = `/checkout?item=${name}&image=${image}`;
 }
 </script>
 

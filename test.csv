@@ -1,0 +1,13 @@
+ id,product,image,price
+1,Basmati rice,static/img/rice.jpg,700
+2,Nutella,static/img/nutella.jpg,190
+3,Quaker Oats,static/img/oats.jpg,100
+4,Dark Fantasy,static/img/darkfantasy.jpg,300
+5,Wheat Powder,static/img/wheat.jpg,540
+6,Cheese,static/img/cheese.jpg,114
+7,Horlicks,static/img/horlcks.jpg,190
+8,Everyday Milk Powder,static/img/milkpow.jpg,600
+9,Tomato Ketchup,static/img/ketchup.jpg,144
+10,Fresh Potato,static/img/potato.jpg,40
+11,Wheat Bread,static/img/bread.jpg,50
+12,Sambar Kit,static/img/sambar.jpg,70
