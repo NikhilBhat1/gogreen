@@ -53,14 +53,15 @@ class CartModel(db.Model):
     email = db.Column(db.String())
     item = db.Column(db.String())
     image = db.Column(db.String())
+    price=db.Column(db.Integer)
     
     
     
-    def __init__(self, email, item, image):
+    def __init__(self, email, item, image,price):
         self.email = email
         self.item=item
         self.image = image
-        
+        self.price=price
         
 
 
@@ -83,12 +84,18 @@ def login():
             hashed=hashlib.md5(dbpass.encode())
             passw=hashed.hexdigest()
             te=0
-
+            
+          
             for i in result:
+                
                 if i[3]==uname and i[2]==passw:
                     te=1
+                    print(te)
+            cursor.execute('SELECT * from test')
+            result=cursor.fetchall()
+             
             if te==1:
-                return render_template('home.html'),uname
+                return render_template('home.html',length1=int(len(result)/2),length2=len(result),result = result)
             else:
                 return render_template('login.html')
         else:
@@ -128,6 +135,7 @@ def signup():
 def product():
     cursor.execute('SELECT * from test')
     result=cursor.fetchall()
+    
     return render_template("product.html", length1=int(len(result)/2),length2=len(result),result = result)
     
 
@@ -135,7 +143,11 @@ def product():
 def cart():
     cursor.execute('SELECT * from carts where email=%s',[uname])
     result=cursor.fetchall()
-    return render_template('cart.html',result=result)
+    tp=0
+    for i in range(0,len(result)):
+        tp=tp+result[i][4]
+    return render_template('cart.html',result=result,length=len(result),tp=tp)
+
 
 
 @app.route('/health', methods=['GET', 'POST'])
@@ -225,6 +237,8 @@ def search():
     search=request.form.get("search")
     product=None
     price=None
+    cursor.execute('SELECT * from test')
+    result=cursor.fetchall()
 
     index = [ id for id, prod in enumerate(list(df['Product'])) if search.lower() in prod.lower()][0]
 
@@ -232,7 +246,7 @@ def search():
     price = df['price'][index]
     img = df['image'][index]
         
-    return render_template('home.html', search=product,price=price,img=img)
+    return render_template('home.html', search=product,price=price,img=img,length1=int(len(result)/2),length2=len(result),result = result)
 
 @app.route('/gohtml',methods=['GET'])
 def grows():
@@ -243,8 +257,8 @@ def grows():
 def carts():
     item = request.args.get('item')
     image = request.args.get('image')
-    proid=request.args.get('proid')
-    print(proid)
+    price=request.args.get('price')
+    print(price)
    
     cursor.execute('SELECT item from carts WHERE email=%s',[uname])
     result=cursor.fetchall()
@@ -259,7 +273,7 @@ def carts():
        
         for i in range(0,len(result)):
             print(result[i][0])
-            print(proid)
+            
             if item==result[i][0]:
                
                 count2=1
@@ -269,14 +283,40 @@ def carts():
         else:
         
             
-            new_user = CartModel(email=uname, item=item, image=image)
+            new_user = CartModel(email=uname, item=item, image=image,price=price)
             db.session.add(new_user)
             db.session.commit()
 
     cursor.execute('SELECT * from carts WHERE email= %s', [uname])
     result=cursor.fetchall()
-    return render_template("cart.html", length=len(result), result = result)
- 
     
+    tp=0
+    for i in range(0,len(result)):
+        tp=tp+result[i][4]
+
+    return render_template("cart.html", length=len(result), result = result,tp=tp)
+
+@app.route('/dropitems', methods=['GET'])
+def dropitems():
+    item = request.args.get('item')
+    
+    
+    
+   
+    cursor.execute('DELETE from carts * WHERE item=%s',[item])
+    cursor.execute('SELECT * from carts WHERE email=%s',[uname])
+    result=cursor.fetchall()
+    tp=0
+    for i in range(0,len(result)):
+        tp=tp+result[i][4]
+
+    
+    return render_template("cart.html", length=len(result), result = result,tp=tp)
+@app.route('/home',methods=['GET'])
+def home():
+    cursor.execute('SELECT * from test')
+    result=cursor.fetchall()
+    return render_template('home.html',length1=int(len(result)/2),length2=len(result),result = result)
+
 if __name__ == "__main__":
     app.run(debug=True) 

@@ -89,9 +89,9 @@
               </div>
           </div>
           <h7>{{result[i][1]}}</h7>
-          <p>{{result[i][4]}}</p>
+          <p>Rs.{{result[i][3]}}</p>
           
-          <button type="button" onclick="show('{{result[i][1]}}','{{result[i][2]}}');" class="add_to_cart">Add to Cart</button>
+          <button type="button" onclick="show('{{result[i][1]}}','{{result[i][2]}}','{{result[i][3]}}');" class="add_to_cart">Add to Cart</button>
           <i class="bi bi-cart4"></i>
           
       </div>
@@ -155,8 +155,8 @@
               </div>
           </div>
           <h7>{{result[i][1]}}</h7>
-          <p>{{result[i][3]}}</p>
-          <button type="button" onclick="show('Horlicks(500gm)','static/img/horlcks.jpg');"  class="add_to_cart">Add to Cart</button>
+          <p>Rs.{{result[i][3]}}</p>
+          <button type="button" onclick="show('{{result[i][1]}}','{{result[i][2]}}','{{result[i][3]}}');"  class="add_to_cart">Add to Cart</button>
           <i class="bi bi-cart4"></i>
       </div>
       {%endfor%}
@@ -221,8 +221,8 @@
       <!-- </div> -->
       
 <script>
-                        function show(name, image){
-window.location.href = `/checkout?item=${name}&image=${image}`;
+                        function show(name, image,price){
+window.location.href = `/checkout?item=${name}&image=${image}&price=${price}`;
 }
 </script>
 

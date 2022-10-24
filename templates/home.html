@@ -162,19 +162,21 @@
   </section>
   <div style="padding-top:100px; padding-left: 10px;">
     <div class="row">
+      {%for i in range(0, length1) %}
       <div class="col-lg-2 text-center"  >
           <div class="card border-0 bg-light mb-2">
               <div class="card-body">
-                  <img src="static/img/rice.jpg" class="img-fluids" alt="">
+                  <img src="{{result[i][2]}}" class="img-fluids" alt="">
               </div>
           </div>
-          <h7>Basmati Rice(5Kg)</h7>
-          <p>Rs.700</p>
-          <button type="button" class="add_to_cart">Add to Cart</button>
+          <h7>{{result[i][1]}}</h7>
+          <p>Rs.{{result[i][3]}}</p>
+          <button type="button" onclick="show('{{result[i][1]}}','{{result[i][2]}}','{{result[i][3]}}');"  class="add_to_cart">Add to Cart</button>
           <i class="bi bi-cart4"></i>
       </div>
-      <br>
-      <div class="col-lg-2 text-center">
+      {%endfor%}
+      <!-- <br> -->
+      <!-- <div class="col-lg-2 text-center">
           <div class="card border-0 bg-light mb-2">
               <div class="card-body">
                   <img src="static/img/nutella.jpg" class="img-fluids" alt="" >
@@ -235,20 +237,27 @@
           <button type="button" class="add_to_cart">Add to Cart</button>
           <i class="bi bi-cart4"></i>
       </div>
-  <br>
+  <br> -->
+  {%for i in range(length1, length2) %}
       <div class="col-lg-2 text-center">
           <div class="card border-0 bg-light mb-2">
               <div class="card-body">
-                  <img src="static/img/horlcks.jpg" class="img-fluids" alt="" height="115px" >
+                  <img src="{{result[i][2]}}" class="img-fluids" alt="" height="115px" >
               </div>
           </div>
-          <h7>Horlicks(500gm)</h7>
-          <p>Rs.190</p>
-          <button type="button" class="add_to_cart">Add to Cart</button>
+          <h7>{{result[i][1]}}</h7>
+          <p>Rs.{{result[i][3]}}</p>
+          <button type="button" onclick="show('{{result[i][1]}}','{{result[i][2]}}','{{result[i][3]}}');"  class="add_to_cart">Add to Cart</button>
           <i class="bi bi-cart4"></i>
       </div>
+      {%endfor%}
+      <script>
+        function show(name, image,price){
+window.location.href = `/checkout?item=${name}&image=${image}&price=${price}`;
+}
+</script>
   
-      <div class="col-lg-2 text-center">
+      <!-- <div class="col-lg-2 text-center">
           <div class="card border-0 bg-light mb-2">
               <div class="card-body">
               <img src="static/img/milkpow.jpg" class="img-fluids" alt="" height="115px" >
@@ -306,7 +315,7 @@
           <button type="button" class="add_to_cart">Add to Cart</button>
           <i class="bi bi-cart4"></i>
       </div>
-  
+   -->
   
   
     </div>
