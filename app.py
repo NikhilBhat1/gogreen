@@ -13,7 +13,7 @@ df=pd.read_csv('search.csv')
 salt="#j@nu$w&"
 
 app = Flask(__name__)
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://cvhtpadmowigsg:a63ee1a334a62fea6c7be9ae1c3f7ec65a4c3abaab56d1e9f48b6b45e290925b@ec2-52-23-131-232.compute-1.amazonaws.com:5432/de9qqrufietv0i"
+app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://njiebaozofodsx:6b7a97900288cff06c9188234849db6e997ab72b0ddddd28a86323c87b36f9d1@ec2-3-214-2-141.compute-1.amazonaws.com:5432/d6hr4a2fimvkf1"
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True
 
 db = SQLAlchemy(app)
