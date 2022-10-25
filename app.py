@@ -147,6 +147,12 @@ def cart():
     for i in range(0,len(result)):
         tp=tp+result[i][4]
     return render_template('cart.html',result=result,length=len(result),tp=tp)
+@app.route('/grow',methods=['GET'])
+def grow():
+    cursor.execute('SELECT * from carts where email=%s',[uname])
+    result=cursor.fetchall()
+    
+    return render_template('grow.html',result=result,length=len(result))
 
 
 

@@ -162,21 +162,9 @@
   </section>
   <div style="padding-top:100px; padding-left: 10px;">
     <div class="row">
-      {%for i in range(0, length1) %}
-      <div class="col-lg-2 text-center"  >
-          <div class="card border-0 bg-light mb-2">
-              <div class="card-body">
-                  <img src="{{result[i][2]}}" class="img-fluids" alt="">
-              </div>
-          </div>
-          <h7>{{result[i][1]}}</h7>
-          <p>Rs.{{result[i][3]}}</p>
-          <button type="button" onclick="show('{{result[i][1]}}','{{result[i][2]}}','{{result[i][3]}}');"  class="add_to_cart">Add to Cart</button>
-          <i class="bi bi-cart4"></i>
-      </div>
-      {%endfor%}
       
-  {%for i in range(length1, length2) %}
+      
+  {%for i in range(0, length2) %}
       <div class="col-lg-2 text-center">
           <div class="card border-0 bg-light mb-2">
               <div class="card-body">
