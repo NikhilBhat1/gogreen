@@ -20,7 +20,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 DATABASE_URL="postgres://stgculhhzfqsnp:7b2285e352bee51479a4bc6dd01073794c5cc3270b18cb7dbfcf80b2427683ed@ec2-3-220-207-90.compute-1.amazonaws.com:5432/d96v1v718pbl7i"
 db = SQLAlchemy(app)
 migrate = Migrate(app, db)
-conn=psycopg2.connect(DATABASE_URL, sslmode='receive')
+conn=psycopg2.connect(DATABASE_URL, sslmode='require')
 conn.autocommit = True
 cursor=conn.cursor()
 
