@@ -109,28 +109,28 @@ def signup():
     if request.method == 'GET':
         return  render_template('signup.html')
     elif request.method == 'POST':
-        cursor.execute('''SELECT * from users''')
-        result=cursor.fetchall()
-        count=0
-        uname=request.form.get("email")
-        phno=request.form.get("people")
-        print(uname,phno)
-        for i in result:
-            if i[3]==uname or i[6]==phno:
-                count=1
-        if count==1:
-            return render_template("signup.html")
+        # cursor.execute('''SELECT * from users''')
+        # result=cursor.fetchall()
+        # count=0
+        # uname=request.form.get("email")
+        # phno=request.form.get("people")
+        # print(uname,phno)
+        # for i in result:
+        #     if i[3]==uname or i[6]==phno:
+        #         count=1
+        # if count==1:
+        #     return render_template("signup.html")
             
+        # else:
+        if request.form:
+            data = request.form
+            dbpass=data["phone"]+salt
+            hashed=hashlib.md5(dbpass.encode())
+            new_user = UsersModel(name=data['name'], password=hashed.hexdigest(),email=data['email'],age=data['date'],gender=data['time'],mobile=data['people'],address=data['message'])
+            db.session.add(new_user)
+            db.session.commit()
+            return render_template("login.html")
         else:
-            if request.form:
-                data = request.form
-                dbpass=data["phone"]+salt
-                hashed=hashlib.md5(dbpass.encode())
-                new_user = UsersModel(name=data['name'], password=hashed.hexdigest(),email=data['email'],age=data['date'],gender=data['time'],mobile=data['people'],address=data['message'])
-                db.session.add(new_user)
-                db.session.commit()
-                return render_template("login.html")
-            else:
                 return {"error": "No data passed in form."}
        
 @app.route('/product', methods=['GET'])
