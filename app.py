@@ -78,7 +78,7 @@ def login():
     elif request.method == 'POST':
         global uname
         if request.method== 'POST':
-            cursor.execute('''SELECT * from users''')
+            cursor.execute('SELECT * from users')
             result=cursor.fetchall()
             uname=request.form.get("email")
             passw=request.form.get("phone")
