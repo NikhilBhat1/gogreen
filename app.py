@@ -8,6 +8,8 @@ import pickle
 import numpy as np
 
 
+
+
 df=pd.read_csv('search.csv')
 
 salt="#j@nu$w&"
@@ -147,6 +149,9 @@ def cart():
     for i in range(0,len(result)):
         tp=tp+result[i][4]
     return render_template('cart.html',result=result,length=len(result),tp=tp)
+
+
+
 @app.route('/grow',methods=['GET'])
 def grow():
     cursor.execute('SELECT * from carts where email=%s',[uname])
@@ -261,6 +266,7 @@ def grows():
 
 @app.route('/checkout', methods=['GET'])
 def carts():
+
     item = request.args.get('item')
     image = request.args.get('image')
     price=request.args.get('price')
@@ -292,15 +298,17 @@ def carts():
             new_user = CartModel(email=uname, item=item, image=image,price=price)
             db.session.add(new_user)
             db.session.commit()
-
+    global result2
     cursor.execute('SELECT * from carts WHERE email= %s', [uname])
-    result=cursor.fetchall()
+    result2=cursor.fetchall()
     
     tp=0
-    for i in range(0,len(result)):
-        tp=tp+result[i][4]
+    for i in range(0,len(result2)):
+        tp=tp+result2[i][4]
 
-    return render_template("cart.html", length=len(result), result = result,tp=tp)
+    return render_template("cart.html", length=len(result2), result = result2,tp=tp)
+
+
 
 @app.route('/dropitems', methods=['GET'])
 def dropitems():
@@ -323,6 +331,8 @@ def home():
     cursor.execute('SELECT * from test')
     result=cursor.fetchall()
     return render_template('home.html',length1=int(len(result)/2),length2=len(result),result = result)
+
+
 
 if __name__ == "__main__":
     app.run(debug=True) 
